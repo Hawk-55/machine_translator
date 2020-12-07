@@ -27,6 +27,22 @@ plt.plot(audio_tensor.numpy())
 #plt.show()
 
 
+# To print the audio clip
+import speech_recognition as sr
+
+#file_audio = "/home/harshal/Music/TURKISH_FEMALE_BURCU.mp3"
+audio_clip.export("file_audio.wav",format="wav")
+
+file_audio = "file_audio.wav"
+
+r = sr.Recognizer()
+
+with sr.AudioFile(file_audio) as source:
+     audio_data = r.record(source)
+     text = r.recognize_google(audio_data)
+     print (text)
+
+
 
 
 
